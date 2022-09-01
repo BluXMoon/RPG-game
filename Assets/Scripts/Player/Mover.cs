@@ -3,43 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Mover : MonoBehaviour
+namespace RPG.Player
 {
-    [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private Animator animator;
-    void Start()
+    public class Mover : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private NavMeshAgent agent;
+        [SerializeField] private Animator animator;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButton(0))
+        public static Mover instance;
+
+        private void Awake()
         {
-            MoveToCursor();
+            instance = this;
+        }
+        void Start()
+        {
+
         }
 
-        UpdateAnimator();
-    }
-
-    private void MoveToCursor()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        bool hasHit = Physics.Raycast(ray, out hit);
-
-        if (hasHit)
+        void Update()
         {
-            agent.SetDestination(hit.point);
+            UpdateAnimator();
         }
-    }
 
-    private void UpdateAnimator()
-    {
-        Vector3 velocity = agent.velocity;
-        Vector3 localVelocity = transform.InverseTransformDirection(velocity);
-        float speed = localVelocity.z;
-        animator.SetFloat("ForwardSpeed", speed);
+        public void MoveTo(Vector3 destination)
+        {
+            agent.SetDestination(destination);
+        }
+
+        private void UpdateAnimator()
+        {
+            Vector3 velocity = agent.velocity;
+            Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+            float speed = localVelocity.z;
+            animator.SetFloat("ForwardSpeed", speed);
+        }
     }
 }
+
