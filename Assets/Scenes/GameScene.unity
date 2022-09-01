@@ -646,37 +646,17 @@ PrefabInstance:
     - target: {fileID: 1942099589911215136, guid: 9501a405005875c47b6338bd78bd62b6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.692183
+      value: -6.44
       objectReference: {fileID: 0}
     - target: {fileID: 1942099589911215136, guid: 9501a405005875c47b6338bd78bd62b6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.995453
+      value: 10.56
       objectReference: {fileID: 0}
     - target: {fileID: 1942099589911215136, guid: 9501a405005875c47b6338bd78bd62b6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.406152
-      objectReference: {fileID: 0}
-    - target: {fileID: 1942099589911215136, guid: 9501a405005875c47b6338bd78bd62b6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.88092357
-      objectReference: {fileID: 0}
-    - target: {fileID: 1942099589911215136, guid: 9501a405005875c47b6338bd78bd62b6,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.35931373
-      objectReference: {fileID: 0}
-    - target: {fileID: 1942099589911215136, guid: 9501a405005875c47b6338bd78bd62b6,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.28516182
-      objectReference: {fileID: 0}
-    - target: {fileID: 1942099589911215136, guid: 9501a405005875c47b6338bd78bd62b6,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.116404764
+      value: -7.91
       objectReference: {fileID: 0}
     - target: {fileID: 2845284390926635175, guid: 9501a405005875c47b6338bd78bd62b6,
         type: 3}
@@ -760,7 +740,7 @@ PrefabInstance:
     - target: {fileID: 2112709325911988285, guid: 55137fc62da70714abe3310d529c357e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.33
+      value: 3.01
       objectReference: {fileID: 0}
     - target: {fileID: 2112709325911988285, guid: 55137fc62da70714abe3310d529c357e,
         type: 3}
@@ -806,11 +786,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4574157753915975273, guid: 55137fc62da70714abe3310d529c357e,
-        type: 3}
-      propertyPath: target
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55137fc62da70714abe3310d529c357e, type: 3}
