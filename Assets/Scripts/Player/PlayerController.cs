@@ -41,7 +41,7 @@ namespace RPG.Player
             {
                 if (Input.GetMouseButton(0))
                 {
-                    Mover.instance.MoveTo(hit.point);
+                    Mover.instance.StartMoveAction(hit.point);
                 }
                 return true;
             }
