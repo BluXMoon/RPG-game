@@ -953,6 +953,11 @@ PrefabInstance:
       objectReference: {fileID: 4574157753915975275}
     - target: {fileID: 8567750607655723682, guid: 55137fc62da70714abe3310d529c357e,
         type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 4574157753915975281}
+    - target: {fileID: 8567750607655723682, guid: 55137fc62da70714abe3310d529c357e,
+        type: 3}
       propertyPath: weaponRange
       value: 2
       objectReference: {fileID: 0}
@@ -993,6 +998,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdff5cd9132c16c4899f2267a895db4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &4574157753915975281 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1560992427083515987, guid: 55137fc62da70714abe3310d529c357e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4574157753915975271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4574157753915975286
 MonoBehaviour:
   m_ObjectHideFlags: 0

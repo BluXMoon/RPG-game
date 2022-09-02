@@ -12,10 +12,13 @@ namespace RPG.Combat
         [SerializeField] private ActionScheduler actionScheduler;
         [SerializeField] private float weaponRange;
         [SerializeField] private Animator animator;
+        [SerializeField] private float timeBetweenAttacks = 1f;
+
         Transform target;
-        bool isInRange;
+        float timeSinceLastAttack = 0f;
         private void Update()
         {
+            timeSinceLastAttack += Time.deltaTime;
             if (object.ReferenceEquals(null, target)) return;
             if (!IsInRange())
             {
@@ -23,10 +26,14 @@ namespace RPG.Combat
             }
             else
             {
-                AttackBehaviour();
+                if(timeSinceLastAttack > timeBetweenAttacks)
+                {
+                    AttackBehaviour();
+                    timeSinceLastAttack = 0f;
+                }
+                
                 mover.Cancel();
             }
-
         }
 
         private void AttackBehaviour()
