@@ -1,14 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Player;
 
 namespace RPG.Combat
 {
     public class Fighter : MonoBehaviour
     {
-        public void Attack(CombatTarget target)
+        [SerializeField] private Mover mover;
+        [SerializeField] private float weaponRange;
+        Transform target;
+        bool isInRange;
+        private void Update()
         {
-            print("Attack");
+            isInRange = Vector3.Distance(transform.position, target.position) < weaponRange;
+            if (!object.ReferenceEquals(null, target) && !isInRange)
+            {
+                mover.MoveTo(target.position);
+            }
+            else
+            {
+                mover.Stop();
+            }
+
+        }
+        public void Attack(CombatTarget _target)
+        {
+            target = _target.transform;
         }
     }
 }

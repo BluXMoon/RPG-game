@@ -9,19 +9,11 @@ namespace RPG.Player
         private int counter = 0;
         void Update()
         {
-            InteractWithCombat();
-            InteractWithMovement();
+            if(InteractWithCombat()) return;
+            if(InteractWithMovement()) return;
         }
 
-        private void InteractWithMovement()
-        {
-            if (Input.GetMouseButton(0))
-            {
-                MoveToCursor();
-            }
-        }
-
-        private void InteractWithCombat()
+        private bool InteractWithCombat()
         {
             RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
             if (counter < hits.Length)
@@ -33,21 +25,27 @@ namespace RPG.Player
                     {
                         fighter.Attack(target);
                     }
+                    return true;
                 }
 
                 if (counter < hits.Length - 1) { counter++; InteractWithCombat(); } else { counter = 0; }
             }
+            return false;
         }
 
-        private void MoveToCursor()
+        private bool InteractWithMovement()
         {
             RaycastHit hit;
             bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
-
             if (hasHit)
             {
-                Mover.instance.MoveTo(hit.point);
+                if (Input.GetMouseButton(0))
+                {
+                    Mover.instance.MoveTo(hit.point);
+                }
+                return true;
             }
+            return false;
         }
 
         private static Ray GetMouseRay()
