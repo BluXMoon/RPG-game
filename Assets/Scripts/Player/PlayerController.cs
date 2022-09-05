@@ -23,7 +23,7 @@ namespace RPG.Player
                 {
                     if (Input.GetMouseButton(0))
                     {
-                        fighter.Attack(target);
+                        fighter.Attack(target.gameObject);
                     }
                     return true;
                 }
