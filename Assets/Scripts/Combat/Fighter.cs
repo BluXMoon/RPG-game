@@ -13,8 +13,10 @@ namespace RPG.Combat
         [SerializeField] private float weaponRange;
         [SerializeField] private Animator animator;
         [SerializeField] private float timeBetweenAttacks = 1f;
+        [SerializeField] private float weaponDamage = 1f;
 
         Transform target;
+        Health targetHealth;
         float timeSinceLastAttack = 0f;
         private void Update()
         {
@@ -52,14 +54,15 @@ namespace RPG.Combat
             target = _target.transform;
         }
 
+        void Hit() // Animation event
+        {
+            targetHealth = target.GetComponent("Health") as Health;
+            targetHealth.TakeDamage(weaponDamage);
+        }
+
         public void Cancel()
         {
             target = null;
-        }
-
-        void Hit() // Animation event
-        {
-
         }
     }
 }
