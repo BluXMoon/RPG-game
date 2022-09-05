@@ -128,6 +128,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3591236442896802632, guid: 55137fc62da70714abe3310d529c357e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4574157753915975274, guid: 55137fc62da70714abe3310d529c357e,
         type: 3}
       propertyPath: m_Acceleration
@@ -135,11 +140,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5263141573215604951, guid: 55137fc62da70714abe3310d529c357e,
         type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1417700515}
+    - target: {fileID: 5263141573215604951, guid: 55137fc62da70714abe3310d529c357e,
+        type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 7780175422949467453}
+    - target: {fileID: 8567750607655723682, guid: 55137fc62da70714abe3310d529c357e,
+        type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1417700515}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55137fc62da70714abe3310d529c357e, type: 3}
+--- !u!195 &4696078187216587524 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 4574157753915975274, guid: 55137fc62da70714abe3310d529c357e,
+    type: 3}
+  m_PrefabInstance: {fileID: 9102194881803316590}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5730791495264292390 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3591236442896802632, guid: 55137fc62da70714abe3310d529c357e,
@@ -160,6 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   animator: {fileID: 7780175422949467453}
+  agent: {fileID: 4696078187216587524}
 --- !u!4 &7133886479572432211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2112709325911988285, guid: 55137fc62da70714abe3310d529c357e,

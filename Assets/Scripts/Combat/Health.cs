@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace RPG.Combat
 {
@@ -8,6 +9,7 @@ namespace RPG.Combat
     {
         [SerializeField] float health = 100f;
         [SerializeField] Animator animator;
+        [SerializeField] NavMeshAgent agent;
         bool isDead;
 
         public bool IsDead()
@@ -23,8 +25,9 @@ namespace RPG.Combat
                 if (!this.gameObject.CompareTag("Player"))
                 {
                     GetComponent<CapsuleCollider>().enabled = false;
+                    agent.enabled = false;
                 }
-                
+               
                 animator.SetTrigger("Death");
                 isDead = true;
             }

@@ -6,9 +6,11 @@ namespace RPG.Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private Fighter fighter;
+        [SerializeField] private Health health;
         private int counter = 0;
         void Update()
         {
+            if (health.IsDead()) { return; }
             if(InteractWithCombat()) return;
             if(InteractWithMovement()) return;
         }

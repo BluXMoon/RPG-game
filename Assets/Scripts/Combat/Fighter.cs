@@ -12,6 +12,7 @@ namespace RPG.Combat
         [SerializeField] private ActionScheduler actionScheduler;
         [SerializeField] private float weaponRange;
         [SerializeField] private Animator animator;
+        [SerializeField] private Health health;
         [SerializeField] private float timeBetweenAttacks = 1f;
         [SerializeField] private float weaponDamage = 1f;
 
@@ -22,6 +23,7 @@ namespace RPG.Combat
             timeSinceLastAttack += Time.deltaTime;
             if (target == null) return;
             if (target.IsDead()) { return; }
+            if (health.IsDead()) { return; }
 
             if (!IsInRange())
             {
