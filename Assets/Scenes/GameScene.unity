@@ -500,10 +500,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 64904364, guid: 31cdeaf74daf88945a7f39095422181a, type: 3}
-      propertyPath: chaseDistance
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5680375649453485388, guid: 31cdeaf74daf88945a7f39095422181a,
         type: 3}
       propertyPath: m_Name

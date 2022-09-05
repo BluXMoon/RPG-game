@@ -222,6 +222,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseDistance: 5
   fighter: {fileID: 712939568223874214}
+  mover: {fileID: 64904365}
+  actionScheduler: {fileID: 4645657853334104178}
 --- !u!114 &64904365
 MonoBehaviour:
   m_ObjectHideFlags: 0

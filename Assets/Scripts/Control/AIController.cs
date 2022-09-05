@@ -1,4 +1,5 @@
 using RPG.Combat;
+using RPG.Core;
 using RPG.Player;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,10 +12,12 @@ namespace RPG.Control
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] Fighter fighter;
         [SerializeField] Mover mover;
+        [SerializeField] ActionScheduler actionScheduler;
 
         private GameObject player;
         private Health playerHealth;
         Vector3 guardPosition;
+        private float timeSinceLastSawPlayer = Mathf.Infinity;
 
         private void Start()
         {
@@ -26,17 +29,39 @@ namespace RPG.Control
 
         private void Update()
         {
-            if(InAttackRangeOfPlayer() && !playerHealth.IsDead())
+            if (InChaseRangeOfPlayer() && !playerHealth.IsDead())
             {
-                fighter.Attack(player);
+                timeSinceLastSawPlayer = 0;
+                AttackBehaviour();
+            }
+            else if (timeSinceLastSawPlayer < 3)
+            {
+                SuspicionBehaviour();
             }
             else
             {
-                mover.StartMoveAction(guardPosition);
+                GuardBehaviour();
             }
+
+            timeSinceLastSawPlayer += Time.deltaTime;
         }
 
-        private bool InAttackRangeOfPlayer()
+        private void GuardBehaviour()
+        {
+            mover.StartMoveAction(guardPosition);
+        }
+
+        private void SuspicionBehaviour()
+        {
+            actionScheduler.CancelCurrentAction();
+        }
+
+        private void AttackBehaviour()
+        {
+            fighter.Attack(player);
+        }
+
+        private bool InChaseRangeOfPlayer()
         {
             return Vector3.Distance(transform.position, player.transform.position) < chaseDistance;
         }
