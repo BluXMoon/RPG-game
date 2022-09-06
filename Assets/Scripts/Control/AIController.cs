@@ -24,6 +24,7 @@ namespace RPG.Control
         private float timeSinceLastSawPlayer = Mathf.Infinity;
         float timeSinceLastWaypointMoved = Mathf.Infinity;
         int currentWaypointIndex = 0;
+        private bool isMoving;
 
         private void Start()
         {
@@ -45,7 +46,7 @@ namespace RPG.Control
             {
                 SuspicionBehaviour();
             }
-            else if (timeSinceLastWaypointMoved > timeToWaitUntillMove)
+            else /*if (timeSinceLastWaypointMoved > timeToWaitUntillMove)*/
             {
                 PatrolBehaviour();
             }
@@ -69,14 +70,16 @@ namespace RPG.Control
             {
                 if (AtWaypoint())
                 {
+                    isMoving = false;
                     timeSinceLastWaypointMoved = 0;
                     CycleWaypoint();
                 }
                 nextPosition = GetCurrentWaypoint();
             }
-
-            if (timeSinceLastWaypointMoved > 2)
+           
+            if (timeSinceLastWaypointMoved > timeToWaitUntillMove && !isMoving)
             {
+                isMoving = true;
                 mover.StartMoveAction(nextPosition);
             }
         }

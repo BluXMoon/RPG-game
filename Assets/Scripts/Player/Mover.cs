@@ -36,6 +36,7 @@ namespace RPG.Player
 
         public void MoveTo(Vector3 destination)
         {
+            agent.ActivateCurrentOffMeshLink(true);
             agent.SetDestination(destination);
             agent.isStopped = false;
         }

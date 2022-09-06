@@ -7,12 +7,17 @@ namespace RPG.Player
     {
         [SerializeField] private Fighter fighter;
         [SerializeField] private Health health;
+        public Mover myMover;
+        public LayerMask terrain;
         private int counter = 0;
         void Update()
         {
             if (health.IsDead()) { return; }
-            if(InteractWithCombat()) return;
-            if(InteractWithMovement()) return;
+            if (Input.GetMouseButton(0))
+            {
+                if (InteractWithCombat()) return;
+                if (InteractWithMovement()) return;
+            }
         }
 
         private bool InteractWithCombat()
@@ -23,10 +28,7 @@ namespace RPG.Player
                 CombatTarget target = hits[counter].transform.GetComponent<CombatTarget>();
                 if (target != null)
                 {
-                    if (Input.GetMouseButton(0))
-                    {
-                        fighter.Attack(target.gameObject);
-                    }
+                    fighter.Attack(target.gameObject);
                     return true;
                 }
 
@@ -34,17 +36,14 @@ namespace RPG.Player
             }
             return false;
         }
-
+      
         private bool InteractWithMovement()
         {
             RaycastHit hit;
-            bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
+            bool hasHit = Physics.Raycast(GetMouseRay(), out hit, 200, terrain);
             if (hasHit)
             {
-                if (Input.GetMouseButton(0))
-                {
-                    Mover.instance.StartMoveAction(hit.point);
-                }
+                myMover.StartMoveAction(hit.point);
                 return true;
             }
             return false;
