@@ -46,7 +46,7 @@ namespace RPG.Control
             {
                 SuspicionBehaviour();
             }
-            else /*if (timeSinceLastWaypointMoved > timeToWaitUntillMove)*/
+            else
             {
                 PatrolBehaviour();
             }
@@ -75,6 +75,10 @@ namespace RPG.Control
                     CycleWaypoint();
                 }
                 nextPosition = GetCurrentWaypoint();
+            }
+            else
+            {
+                mover.StartMoveAction(guardPosition);
             }
            
             if (timeSinceLastWaypointMoved > timeToWaitUntillMove && !isMoving)
