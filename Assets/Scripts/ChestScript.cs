@@ -8,7 +8,6 @@ public class ChestScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print(other.name);
         if (other.CompareTag("Player"))
         {
             chestClosed.SetActive(false);

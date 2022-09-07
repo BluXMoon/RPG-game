@@ -23,7 +23,6 @@ namespace RPG.Combat
         {
             health = Mathf.Max(health - damage, 0);
             healthSlider.value = health;
-            
             if (health == 0 && !isDead)
             {
                 if (!this.gameObject.CompareTag("Player"))

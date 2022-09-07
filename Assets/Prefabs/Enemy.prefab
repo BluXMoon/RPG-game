@@ -736,6 +736,7 @@ MonoBehaviour:
   animator: {fileID: 7686482782286661207}
   agent: {fileID: 4645657853334104174}
   healthSlider: {fileID: 213072093}
+  damageText: {fileID: 0}
 --- !u!4 &7085223217335014969 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2112709325911988285, guid: 55137fc62da70714abe3310d529c357e,
