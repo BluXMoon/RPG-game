@@ -68,6 +68,7 @@ namespace RPG.Combat
         {
             animator.SetTrigger("CancelAttack");
             target = null;
+            mover.Cancel(); 
         }
     }
 }

@@ -10,6 +10,7 @@ namespace RPG.Player
         public Mover myMover;
         public LayerMask terrain;
         private int counter = 0;
+
         void Update()
         {
             if (health.IsDead()) { return; }
