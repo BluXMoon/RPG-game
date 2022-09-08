@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace RPG.Control
 {
@@ -15,6 +16,7 @@ namespace RPG.Control
         [SerializeField] float timeToWaitUntillMove = 2f;
         [SerializeField] Fighter fighter;
         [SerializeField] Mover mover;
+        [SerializeField] NavMeshAgent navMeshAgent;
         [SerializeField] ActionScheduler actionScheduler;
         [SerializeField] PatrolPath patrolPath;
 
@@ -63,7 +65,6 @@ namespace RPG.Control
         private void PatrolBehaviour()
         {
             if (enemyHealth.IsDead()) { return; }
-           
             Vector3 nextPosition = guardPosition;
 
             if(patrolPath != null)
@@ -80,9 +81,10 @@ namespace RPG.Control
             {
                 mover.StartMoveAction(guardPosition);
             }
-           
+     
             if (timeSinceLastWaypointMoved > timeToWaitUntillMove && !isMoving)
             {
+                navMeshAgent.speed = 2.5f;
                 isMoving = true;
                 mover.StartMoveAction(nextPosition);
             }
@@ -106,11 +108,13 @@ namespace RPG.Control
 
         private void SuspicionBehaviour()
         {
+            isMoving = false;
             actionScheduler.CancelCurrentAction();
         }
 
         private void AttackBehaviour()
         {
+            navMeshAgent.speed = 4f;
             fighter.Attack(player);
         }
 

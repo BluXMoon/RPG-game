@@ -691,6 +691,7 @@ MonoBehaviour:
   timeToWaitUntillMove: 2
   fighter: {fileID: 712939568223874214}
   mover: {fileID: 64904365}
+  navMeshAgent: {fileID: 4645657853334104174}
   actionScheduler: {fileID: 4645657853334104178}
   patrolPath: {fileID: 0}
 --- !u!114 &64904365
@@ -736,7 +737,6 @@ MonoBehaviour:
   animator: {fileID: 7686482782286661207}
   agent: {fileID: 4645657853334104174}
   healthSlider: {fileID: 213072093}
-  damageText: {fileID: 0}
 --- !u!4 &7085223217335014969 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2112709325911988285, guid: 55137fc62da70714abe3310d529c357e,

@@ -39,6 +39,20 @@ public class InventorySystem : MonoBehaviour
 
     public void GetClickedItem(int itemID)
     {
+        string itemName = inventory[itemID].name;
+        switch (itemName)
+        {
+            case "apple":
+                health.health += 5;
+                break;
+            case "avocado":
+                health.health += 10;
+                break;
+            case "banana":
+                health.health += 15;
+                break;
+        }
+        health.UpdateHealthSlider();
         inventory.RemoveAt(itemID);
         InventoryUpdate();
     }

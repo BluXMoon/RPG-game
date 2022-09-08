@@ -8,7 +8,7 @@ namespace RPG.Combat
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] float health = 100f;
+        public float health = 100f;
         [SerializeField] Animator animator;
         [SerializeField] NavMeshAgent agent;
         [SerializeField] Slider healthSlider;
@@ -22,7 +22,7 @@ namespace RPG.Combat
         public void TakeDamage(float damage)
         {
             health = Mathf.Max(health - damage, 0);
-            healthSlider.value = health;
+            UpdateHealthSlider();
             if (health == 0 && !isDead)
             {
                 if (!this.gameObject.CompareTag("Player"))
@@ -31,10 +31,15 @@ namespace RPG.Combat
                     healthSlider.gameObject.SetActive(false);
                     agent.enabled = false;
                 }
-               
+
                 animator.SetTrigger("Death");
                 isDead = true;
             }
+        }
+
+        public void UpdateHealthSlider()
+        {
+            healthSlider.value = health;
         }
     }
 }
