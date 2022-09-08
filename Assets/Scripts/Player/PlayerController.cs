@@ -13,7 +13,7 @@ namespace RPG.Player
         void Update()
         {
             if (health.IsDead()) { return; }
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(1))
             {
                 if (InteractWithCombat()) return;
                 if (InteractWithMovement()) return;
