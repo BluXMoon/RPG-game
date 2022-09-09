@@ -618,6 +618,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4144215144523809096, guid: 31cdeaf74daf88945a7f39095422181a,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 623afca1-4091-4c94-aa67-acfd34f71f46
+      objectReference: {fileID: 0}
     - target: {fileID: 5014100886041029889, guid: 31cdeaf74daf88945a7f39095422181a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -737,6 +742,11 @@ PrefabInstance:
     - target: {fileID: 2075746546, guid: 31cdeaf74daf88945a7f39095422181a, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144215144523809096, guid: 31cdeaf74daf88945a7f39095422181a,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 7a791473-6de0-4d92-8a1b-deca2bb94402
       objectReference: {fileID: 0}
     - target: {fileID: 5014100886041029889, guid: 31cdeaf74daf88945a7f39095422181a,
         type: 3}
@@ -2833,6 +2843,11 @@ PrefabInstance:
     - target: {fileID: 2075746546, guid: 31cdeaf74daf88945a7f39095422181a, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144215144523809096, guid: 31cdeaf74daf88945a7f39095422181a,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 2ed420e6-e920-4629-9cec-0d1d95bebea3
       objectReference: {fileID: 0}
     - target: {fileID: 5014100886041029889, guid: 31cdeaf74daf88945a7f39095422181a,
         type: 3}
@@ -5107,6 +5122,11 @@ PrefabInstance:
       propertyPath: inventorySpaces.Array.data[15]
       value: 
       objectReference: {fileID: 1575903391}
+    - target: {fileID: 4093867415448330786, guid: cbeeb7a4a27d86549b7676d031c6adb0,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 47524190-d9fb-499b-928b-7f4fe236e38f
+      objectReference: {fileID: 0}
     - target: {fileID: 5730791495264292390, guid: cbeeb7a4a27d86549b7676d031c6adb0,
         type: 3}
       propertyPath: m_Name
@@ -7900,6 +7920,11 @@ PrefabInstance:
     - target: {fileID: 2075746546, guid: 31cdeaf74daf88945a7f39095422181a, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144215144523809096, guid: 31cdeaf74daf88945a7f39095422181a,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 3fe8875f-2b49-4d9d-bc2e-e3d970a1ff7e
       objectReference: {fileID: 0}
     - target: {fileID: 5680375649453485388, guid: 31cdeaf74daf88945a7f39095422181a,
         type: 3}
@@ -12331,6 +12356,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4144215144523809096, guid: 31cdeaf74daf88945a7f39095422181a,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 2e8af596-8031-42b0-ae99-e222fe06f1f0
+      objectReference: {fileID: 0}
     - target: {fileID: 5014100886041029889, guid: 31cdeaf74daf88945a7f39095422181a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12706,6 +12736,11 @@ PrefabInstance:
     - target: {fileID: 2075746546, guid: 31cdeaf74daf88945a7f39095422181a, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144215144523809096, guid: 31cdeaf74daf88945a7f39095422181a,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 47a6bd68-5844-41c9-8dd4-cf81a6d88d93
       objectReference: {fileID: 0}
     - target: {fileID: 5680375649453485388, guid: 31cdeaf74daf88945a7f39095422181a,
         type: 3}
@@ -13627,7 +13662,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044280328}
-  m_LocalRotation: {x: 0.30528718, y: -0.47895432, z: 0.1821743, w: 0.8026301}
+  m_LocalRotation: {x: 0.30528712, y: -0.4789543, z: 0.18217431, w: 0.8026301}
   m_LocalPosition: {x: -3.3020463, y: 0.9802418, z: -13.1292925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

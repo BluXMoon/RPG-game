@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5263141573215604951}
   - component: {fileID: 8567750607655723682}
   - component: {fileID: 4574157753915975286}
+  - component: {fileID: 5080386649567514444}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -159,6 +160,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighter: {fileID: 8567750607655723682}
+  health: {fileID: 0}
+  myMover: {fileID: 0}
+  terrain:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &8567750607655723682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +181,7 @@ MonoBehaviour:
   actionScheduler: {fileID: 4574157753915975286}
   weaponRange: 2
   animator: {fileID: 1560992427083515987}
+  health: {fileID: 0}
   timeBetweenAttacks: 1
   weaponDamage: 5
 --- !u!114 &4574157753915975286
@@ -189,3 +196,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c6aa566a750f9c428e8c25a6cd75052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5080386649567514444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3591236442896802632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea9374b509b70f4bba37e4a2ca8cf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: 
