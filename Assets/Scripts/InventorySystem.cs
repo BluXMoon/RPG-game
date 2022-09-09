@@ -39,6 +39,7 @@ public class InventorySystem : MonoBehaviour
 
     public void GetClickedItem(int itemID)
     {
+        if(health.health >= 100) { return; }
         string itemName = inventory[itemID].name;
         switch (itemName)
         {
@@ -52,6 +53,7 @@ public class InventorySystem : MonoBehaviour
                 health.health += 15;
                 break;
         }
+        health.health = Mathf.Min(health.health, 100);
         health.UpdateHealthSlider();
         inventory.RemoveAt(itemID);
         InventoryUpdate();
