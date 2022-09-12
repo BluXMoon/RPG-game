@@ -10,14 +10,27 @@ namespace RPG.Combat
     {
         [SerializeField] private Mover mover;
         [SerializeField] private ActionScheduler actionScheduler;
-        [SerializeField] private float weaponRange;
         [SerializeField] private Animator animator;
         [SerializeField] private Health health;
         [SerializeField] private float timeBetweenAttacks = 1f;
         [SerializeField] private float weaponDamage = 1f;
+        [SerializeField] private float weaponRange;
 
         Health target;
         float timeSinceLastAttack = 0f;
+        int layerMask;
+
+        private void Start()
+        {
+            if (transform.CompareTag("Enemy"))
+            {
+                layerMask = LayerMask.GetMask("Player", "Enviroment");
+            }
+            else {
+                layerMask = LayerMask.GetMask("Enemy", "Enviroment");
+            }
+           
+        }
         private void Update()
         {
             timeSinceLastAttack += Time.deltaTime;
@@ -31,19 +44,33 @@ namespace RPG.Combat
             }
             else
             {
-                if(timeSinceLastAttack > timeBetweenAttacks)
+                transform.LookAt(target.transform.position, Vector3.up);
+                RaycastHit hit;
+                Vector3 forward = transform.TransformDirection(Vector3.forward) * 100;
+                Vector3 pos = transform.position;
+                pos.y += 1;
+                Debug.DrawRay(pos, forward, Color.green);
+                if (timeSinceLastAttack > timeBetweenAttacks)
                 {
-                    AttackBehaviour();
-                    timeSinceLastAttack = 0f;
+                    if (Physics.Raycast(pos, forward, out hit, 100, layerMask))
+                    {
+                        if (hit.collider.CompareTag("Player") || hit.collider.CompareTag("Enemy"))
+                        {
+                            AttackBehaviour();
+                            timeSinceLastAttack = 0f;
+                            mover.Cancel();
+                        }
+                        else
+                        {
+                            mover.MoveTo(target.transform.position);
+                        }
+                    }
                 }
-                
-                mover.Cancel();
             }
         }
 
         private void AttackBehaviour()
         {
-            transform.LookAt(target.transform.position, Vector3.up);
             animator.SetTrigger("Attack");
         }
 
