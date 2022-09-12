@@ -7,6 +7,11 @@ public class SavingWrapper : MonoBehaviour
 {
     const string defaultSaveFile = "save";
 
+    private void Start()
+    {
+        Load();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.L))
