@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using RPG.Saving;
 
-public class SavingWrapper : MonoBehaviour
+public class SavingWrapper : MonoBehaviour, ISaveable
 {
     const string defaultSaveFile = "save";
+    string levelName = "";
 
-    private void Start()
+    private void Awake()
     {
         Load();
     }
@@ -27,10 +29,22 @@ public class SavingWrapper : MonoBehaviour
     private void Load()
     {
         GetComponent<SavingSystem>().Load(defaultSaveFile);
+        SceneManager.LoadScene(levelName);
     }
 
     private void Save()
     {
         GetComponent<SavingSystem>().Save(defaultSaveFile);
+    }
+
+    public object CaptureState()
+    {
+        levelName = SceneManager.GetActiveScene().name;
+        return levelName;
+    }
+
+    public void RestoreState(object state)
+    {
+        levelName = (string)state;
     }
 }

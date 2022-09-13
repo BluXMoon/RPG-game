@@ -2635,10 +2635,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1614374937}
     - target: {fileID: 1417700517, guid: cbeeb7a4a27d86549b7676d031c6adb0, type: 3}
-      propertyPath: health
-      value: 
-      objectReference: {fileID: 1417700518}
-    - target: {fileID: 1417700517, guid: cbeeb7a4a27d86549b7676d031c6adb0, type: 3}
       propertyPath: inventorySpaces.Array.data[0]
       value: 
       objectReference: {fileID: 1827338173}
@@ -2702,11 +2698,6 @@ PrefabInstance:
       propertyPath: inventorySpaces.Array.data[15]
       value: 
       objectReference: {fileID: 1575903391}
-    - target: {fileID: 4093867415448330786, guid: cbeeb7a4a27d86549b7676d031c6adb0,
-        type: 3}
-      propertyPath: uniqueIdentifier
-      value: 88835c8f-9f80-45d9-9fb4-f4c872fa9849
-      objectReference: {fileID: 0}
     - target: {fileID: 5730791495264292390, guid: cbeeb7a4a27d86549b7676d031c6adb0,
         type: 3}
       propertyPath: m_Name
@@ -4703,18 +4694,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b981d56cd4c11d14685ee1ff8e0b0042, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1417700518 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1417700515, guid: cbeeb7a4a27d86549b7676d031c6adb0,
-    type: 3}
-  m_PrefabInstance: {fileID: 632652576}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41a15b6f6b1ff754b9d7d10073c6379c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1442813022

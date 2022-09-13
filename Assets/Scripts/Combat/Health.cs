@@ -24,6 +24,10 @@ namespace RPG.Combat
         {
             health = (float)state;
             TakeDamage(0);
+            if(transform.tag == "Player")
+            {
+                print(health);
+            }
         }
 
         public bool IsDead()
